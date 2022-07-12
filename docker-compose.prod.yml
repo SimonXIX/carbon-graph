@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  carbon:
+    build: ./web
+    container_name: carbon
+    expose:
+      - 5000
+    env_file:
+      - ./.env.prod
+    command: gunicorn --bind 0.0.0.0:5000 manage:app --timeout 120
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "1337:80"
+    volumes:
+      - ./nginx-conf:/etc/nginx/conf.d
+    depends_on:
+      - carbon
+
+volumes:
+  dbdata:
