@@ -12,9 +12,9 @@ Distances of journeys are calculated using:
 The total monthly distance for each transportation mode is then multiplied by the most up-to-date conversion factors issued by the UK Government's Department for Business, Energy & Industrial Strategy in July 2018. The kg CO<sub>2</sub>e (kilograms of carbon dioxide equivalent) conversion factors take into account the impact of the seven main greenhouse gases that contribute to climate change as defined by the Kyoto Protocol. The greenhouse gases are:
 
 - carbon dioxide (CO<sub>2</sub>)
-- methane
-- nitrous oxide
+- methane (CH<sub>4</sub>)
+- nitrous oxide (N<sub>2</sub>O)
 - hydroflurocarbons (HFCs)
 - perflurocarbons (PFCs)
-- sulfur hexafluoride (
-- nitrogen trifluoride
+- sulfur hexafluoride (SF<sub>6</sub>)
+- nitrogen trifluoride (NF<sub>3</sub>)
