@@ -16,41 +16,49 @@
   <div class="container">
     <div class="row">
 
-      <canvas id="carbonGraph" width="400" height="400"></canvas>
+      <canvas id="carbonGraph" width="600" height="300"></canvas>
+      <canvas id="carbonGraphYear" width="600" height="300"></canvas>
       <script>
-        const DATA_COUNT = 7;
-        const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100};
-
-        const labels = [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
+        var labels = [
+          'January 2022',
+          'February 2022',
+          'March 2022',
+          'April 2022',
+          'May 2022',
+          'June 2022',
         ];
-        const data = {
+        var data = {
           labels: labels,
           datasets: [
             {
-              label: 'plane',
-              data: [0, 10, 5, 2, 20, 30, 45],
+              label: 'car',
+              data: [0.0010773271,0.0090694581,0.0193481773],
+              backgroundColor: 'rgb(255, 170, 66)',
+            },
+            {
+              label: 'bus',
+              data: [0,0,0,0,0.0007406442],
               backgroundColor: 'rgb(86, 92, 81)',
             },
             {
-              label: 'train',
-              data: [0, 10, 5, 2, 20, 30, 45],
-              backgroundColor: 'rgb(181, 178, 118)',
+              label: 'light rail and tram',
+              data: [0.0009669100,0,0.0025784266,0.0017956899,0.0159309928,0.0009669100],
+              backgroundColor: 'rgb(50, 168, 82)',
             },
             {
-              label: 'car',
-              data: [0, 10, 5, 2, 20, 30, 45],
-              backgroundColor: 'rgb(255, 170, 66)',
+              label: 'national rail',
+              data: [0.0356401460,0,0.0360399553,0.0555163812,0.0459780729,0.0360399553],
+              backgroundColor: 'rgb(75, 121, 196)',
+            },
+            {
+              label: 'international rail',
+              data: [0,0,0,0,0.0020887032],
+              backgroundColor: 'rgb(151, 64, 201)',
             },
           ]
         };
 
-        const config = {
+        var config = {
           type: 'bar',
           data: data,
           options: {
@@ -72,17 +80,87 @@
               y: {
                 title: {
                   display: true,
-                  text: 'tonnes of carbon'
+                  text: 'metric tonnes (Mg) of carbon'
                 },
                 stacked: true
               }
             }
           }
         };
-      </script>
-      <script>
-        const carbonGraph = new Chart(
+
+        var carbonGraph = new Chart(
           document.getElementById('carbonGraph'),
+          config
+        );
+      </script>
+
+      <script>
+        var labels = [
+          '2022',
+        ];
+        var data = {
+          labels: labels,
+          datasets: [
+            {
+              label: 'car',
+              data: [0.029494962],
+              backgroundColor: 'rgb(255, 170, 66)',
+            },
+            {
+              label: 'bus',
+              data: [0.000740644],
+              backgroundColor: 'rgb(86, 92, 81)',
+            },
+            {
+              label: 'light rail and tram',
+              data: [0.022238929],
+              backgroundColor: 'rgb(50, 168, 82)',
+            },
+            {
+              label: 'national rail',
+              data: [0.209214511],
+              backgroundColor: 'rgb(75, 121, 196)',
+            },
+            {
+              label: 'international rail',
+              data: [0.002088703],
+              backgroundColor: 'rgb(151, 64, 201)',
+            },
+          ]
+        };
+
+        var config = {
+          type: 'bar',
+          data: data,
+          options: {
+            plugins: {
+              title: {
+                display: false,
+                text: 'Chart.js Bar Chart - Stacked'
+              },
+            },
+            responsive: true,
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: 'year'
+                },
+                stacked: true,
+              },
+              y: {
+                title: {
+                  display: true,
+                  text: 'metric tonnes (Mg) of carbon'
+                },
+                stacked: true
+              }
+            }
+          }
+        };
+
+        var carbonGraphYear = new Chart(
+          document.getElementById('carbonGraphYear'),
           config
         );
       </script>
