@@ -48,7 +48,7 @@
               }
             }
           }
-          datasets.push({label:type, data:type_data, backgroundColor: randomColor(),})
+          datasets.push({label:type, data:type_data, backgroundColor: randomColor({hue: 'green'}),})
         }
 
         // set up chart
@@ -125,7 +125,7 @@
           });
           // sum all number values for each transport type
           var type_sum = type_numbers.reduce((partialSum, a) => partialSum + a, 0);
-          annual_datasets.push({label:type, data:[type_sum], backgroundColor: randomColor(),})
+          annual_datasets.push({label:type, data:[type_sum], backgroundColor: randomColor({hue: 'green'}),})
         }
 
         // set up chart
