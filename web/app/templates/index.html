@@ -19,44 +19,66 @@
       <canvas id="carbonGraph" width="600" height="300"></canvas>
       <canvas id="carbonGraphYear" width="600" height="300"></canvas>
       <script>
-        var labels = [
-          'January 2022',
-          'February 2022',
-          'March 2022',
-          'April 2022',
-          'May 2022',
-          'June 2022',
-          'July 2022',
-        ];
+        function random_rgba() {
+          var o = Math.round, r = Math.random, s = 255;
+          return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+        }
+
+        var x = {{ data['years']|safe }}
+        var labels = []
+        var car_data = []
+        var bus_data = []
+        var tram_data = []
+        var nationalrail_data = []
+        var internationalrail_data = []
+        for (var y of x) {
+          if (y.hasOwnProperty('months')) {
+            for (var z of y['months']) {
+              labels.push(z['month'] + " " + y['year'])
+
+              if (z.hasOwnProperty('car')) {
+                car_data.push(z['car'])
+              }
+              else {
+                car_data.push('0')
+              }
+              if (z.hasOwnProperty('bus')) {
+                bus_data.push(z['bus'])
+              }
+              else {
+                bus_data.push('0')
+              }
+              if (z.hasOwnProperty('light rail and tram')) {
+                tram_data.push(z['light rail and tram'])
+              }
+              else {
+                tram_data.push('0')
+              }
+              if (z.hasOwnProperty('national rail')) {
+                nationalrail_data.push(z['national rail'])
+              }
+              else {
+                nationalrail_data.push('0')
+              }
+              if (z.hasOwnProperty('international rail')) {
+                internationalrail_data.push(z['international rail'])
+              }
+              else {
+                internationalrail_data.push('0')
+              }
+            }
+          }
+        }
+        var datasets = []
+        datasets.push({label:'car', data:car_data, backgroundColor: random_rgba(),})
+        datasets.push({label:'bus', data:bus_data, backgroundColor: random_rgba(),})
+        datasets.push({label:'light rail and tram', data:tram_data, backgroundColor: random_rgba(),})
+        datasets.push({label:'national rail', data:nationalrail_data, backgroundColor: random_rgba(),})
+        datasets.push({label:'international rail', data:internationalrail_data, backgroundColor: random_rgba(),})
+
         var data = {
           labels: labels,
-          datasets: [
-            {
-              label: 'car',
-              data: [0.0010773271,0.0090694581,0.0193481773,0,0,0,0.0317431034],
-              backgroundColor: 'rgb(255, 170, 66)',
-            },
-            {
-              label: 'bus',
-              data: [0,0,0,0,0.0007406442,0,0.0024688142],
-              backgroundColor: 'rgb(86, 92, 81)',
-            },
-            {
-              label: 'light rail and tram',
-              data: [],
-              backgroundColor: 'rgb(50, 168, 82)',
-            },
-            {
-              label: 'national rail',
-              data: [0.0361541865,0,0.0376391926,0.0570585029,0.0657400770,0.0365539959,0.0475201946],
-              backgroundColor: 'rgb(75, 121, 196)',
-            },
-            {
-              label: 'international rail',
-              data: [0,0,0,0,0.0020887032],
-              backgroundColor: 'rgb(151, 64, 201)',
-            },
-          ]
+          datasets: datasets,
         };
 
         var config = {
@@ -96,38 +118,49 @@
       </script>
 
       <script>
-        var labels = [
-          '2022',
-        ];
+        var annual_labels = []
+        var x = {{ data['years']|safe }}
+        for (var y of x){
+          if (y.hasOwnProperty('months')){
+            annual_labels.push(y['year'])
+          }
+        }
+
+        const car_numbers = car_data.map(str => {
+          return Number(str);
+        });
+        const car_sum = car_numbers.reduce((partialSum, a) => partialSum + a, 0);
+
+        const bus_numbers = bus_data.map(str => {
+          return Number(str);
+        });
+        const bus_sum = bus_numbers.reduce((partialSum, a) => partialSum + a, 0);
+
+        const tram_numbers = tram_data.map(str => {
+          return Number(str);
+        });
+        const tram_sum = tram_numbers.reduce((partialSum, a) => partialSum + a, 0);
+
+        const nationalrail_numbers = nationalrail_data.map(str => {
+          return Number(str);
+        });
+        const nationalrail_sum = nationalrail_numbers.reduce((partialSum, a) => partialSum + a, 0);
+
+        const internationalrail_numbers = internationalrail_data.map(str => {
+          return Number(str);
+        });
+        const internationalrail_sum = internationalrail_numbers.reduce((partialSum, a) => partialSum + a, 0);
+
+        var annual_datasets = []
+        annual_datasets.push({label:'car', data:[car_sum], backgroundColor: random_rgba(),})
+        annual_datasets.push({label:'bus', data:[bus_sum], backgroundColor: random_rgba(),})
+        annual_datasets.push({label:'light rail and tram', data:[tram_sum], backgroundColor: random_rgba(),})
+        annual_datasets.push({label:'national rail', data:[nationalrail_sum], backgroundColor: random_rgba(),})
+        annual_datasets.push({label:'international rail', data:[internationalrail_sum], backgroundColor: random_rgba(),})
+
         var data = {
-          labels: labels,
-          datasets: [
-            {
-              label: 'car',
-              data: [0.061238066],
-              backgroundColor: 'rgb(255, 170, 66)',
-            },
-            {
-              label: 'bus',
-              data: [0.003209458],
-              backgroundColor: 'rgb(86, 92, 81)',
-            },
-            {
-              label: 'light rail and tram',
-              data: [0],
-              backgroundColor: 'rgb(50, 168, 82)',
-            },
-            {
-              label: 'national rail',
-              data: [0.28066615],
-              backgroundColor: 'rgb(75, 121, 196)',
-            },
-            {
-              label: 'international rail',
-              data: [0.002088703],
-              backgroundColor: 'rgb(151, 64, 201)',
-            },
-          ]
+          labels: annual_labels,
+          datasets: annual_datasets,
         };
 
         var config = {

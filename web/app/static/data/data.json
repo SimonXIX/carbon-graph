@@ -1,0 +1,46 @@
+{
+  "years": [
+    {
+      "year": "2021"
+    },
+    {
+      "year": "2022",
+      "months": [
+        {
+          "month": "January",
+          "car": "0.0010773271",
+          "national rail": "0.0361541865"
+        },
+        {
+          "month": "February",
+          "car": "0.0090694581"
+        },
+        {
+          "month": "March",
+          "car": "0.0193481773",
+          "national rail": "0.0376391926"
+        },
+        {
+          "month": "April",
+          "national rail": "0.0570585029"
+        },
+        {
+          "month": "May",
+          "bus": "0.0007406442",
+          "national rail": "0.0657400770",
+          "international rail": "0.0020887032"
+        },
+        {
+          "month": "June",
+          "national rail": "0.0365539959"
+        },
+        {
+          "month": "July",
+          "car": "0.0317431034",
+          "bus": "0.0024688142",
+          "national rail": "0.0475201946"
+        }
+      ]
+    }
+  ]
+}

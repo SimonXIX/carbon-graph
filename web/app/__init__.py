@@ -21,4 +21,6 @@ moment.init_app(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    json_data = open('./app/static/data/data.json')
+    data = json.load(json_data)
+    return render_template('index.html', data=data)
