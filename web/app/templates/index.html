@@ -8,6 +8,7 @@
 # @acknowledgements:
 # https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3
 # Bootstrap 5.1.3: https://getbootstrap.com/
+# https://stackoverflow.com/questions/23095637/how-do-you-get-random-rgb-in-javascript
 -->
 
 {% extends "base.html" %}
@@ -19,63 +20,45 @@
       <canvas id="carbonGraph" width="600" height="300"></canvas>
       <canvas id="carbonGraphYear" width="600" height="300"></canvas>
       <script>
+        // function to make a random RGB colour
+        // from https://stackoverflow.com/questions/23095637/how-do-you-get-random-rgb-in-javascript
         function random_rgba() {
           var o = Math.round, r = Math.random, s = 255;
           return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
         }
 
+        // define variables
         var x = {{ data['years']|safe }}
         var labels = []
-        var car_data = []
-        var bus_data = []
-        var tram_data = []
-        var nationalrail_data = []
-        var internationalrail_data = []
+        var all_keys = []
+        var datasets = []
+        // get all the month labels and transportation types referenced in the JSON
         for (var y of x) {
           if (y.hasOwnProperty('months')) {
             for (var z of y['months']) {
               labels.push(z['month'] + " " + y['year'])
-
-              if (z.hasOwnProperty('car')) {
-                car_data.push(z['car'])
-              }
-              else {
-                car_data.push('0')
-              }
-              if (z.hasOwnProperty('bus')) {
-                bus_data.push(z['bus'])
-              }
-              else {
-                bus_data.push('0')
-              }
-              if (z.hasOwnProperty('light rail and tram')) {
-                tram_data.push(z['light rail and tram'])
-              }
-              else {
-                tram_data.push('0')
-              }
-              if (z.hasOwnProperty('national rail')) {
-                nationalrail_data.push(z['national rail'])
-              }
-              else {
-                nationalrail_data.push('0')
-              }
-              if (z.hasOwnProperty('international rail')) {
-                internationalrail_data.push(z['international rail'])
-              }
-              else {
-                internationalrail_data.push('0')
-              }
+              var keys = Object.keys(z)
+              all_keys.push(Object.keys(z))
+              all_keys = [].concat.apply([], all_keys)
+              all_keys = [...new Set(all_keys)];
+              all_keys = all_keys.filter(e => e !== 'month');
             }
           }
         }
-        var datasets = []
-        datasets.push({label:'car', data:car_data, backgroundColor: random_rgba(),})
-        datasets.push({label:'bus', data:bus_data, backgroundColor: random_rgba(),})
-        datasets.push({label:'light rail and tram', data:tram_data, backgroundColor: random_rgba(),})
-        datasets.push({label:'national rail', data:nationalrail_data, backgroundColor: random_rgba(),})
-        datasets.push({label:'international rail', data:internationalrail_data, backgroundColor: random_rgba(),})
+        // for each type of transport, push data into an array and add to dataset
+        for (type of all_keys) {
+          var type_data = []
+          for (var y of x) {
+            if (y.hasOwnProperty('months')) {
+              for (var z of y['months']) {
+                type_data.push(z[type])
+              }
+            }
+          }
+          datasets.push({label:type, data:type_data, backgroundColor: random_rgba(),})
+        }
 
+        // set up chart
         var data = {
           labels: labels,
           datasets: datasets,
@@ -118,6 +101,8 @@
       </script>
 
       <script>
+
+        // get all the labels for years
         var annual_labels = []
         var x = {{ data['years']|safe }}
         for (var y of x){
@@ -126,38 +111,31 @@
           }
         }
 
-        const car_numbers = car_data.map(str => {
-          return Number(str);
-        });
-        const car_sum = car_numbers.reduce((partialSum, a) => partialSum + a, 0);
-
-        const bus_numbers = bus_data.map(str => {
-          return Number(str);
-        });
-        const bus_sum = bus_numbers.reduce((partialSum, a) => partialSum + a, 0);
-
-        const tram_numbers = tram_data.map(str => {
-          return Number(str);
-        });
-        const tram_sum = tram_numbers.reduce((partialSum, a) => partialSum + a, 0);
-
-        const nationalrail_numbers = nationalrail_data.map(str => {
-          return Number(str);
-        });
-        const nationalrail_sum = nationalrail_numbers.reduce((partialSum, a) => partialSum + a, 0);
-
-        const internationalrail_numbers = internationalrail_data.map(str => {
-          return Number(str);
-        });
-        const internationalrail_sum = internationalrail_numbers.reduce((partialSum, a) => partialSum + a, 0);
-
+        // using the all_keys variable from above, get data for each transport type
         var annual_datasets = []
-        annual_datasets.push({label:'car', data:[car_sum], backgroundColor: random_rgba(),})
-        annual_datasets.push({label:'bus', data:[bus_sum], backgroundColor: random_rgba(),})
-        annual_datasets.push({label:'light rail and tram', data:[tram_sum], backgroundColor: random_rgba(),})
-        annual_datasets.push({label:'national rail', data:[nationalrail_sum], backgroundColor: random_rgba(),})
-        annual_datasets.push({label:'international rail', data:[internationalrail_sum], backgroundColor: random_rgba(),})
+        for (type of all_keys) {
+          var type_data = []
+          for (var y of x) {
+            if (y.hasOwnProperty('months')) {
+              for (var z of y['months']) {
+                type_data.push(z[type])
+              }
+            }
+          }
+          // turn the strings to numbers
+          var type_numbers = type_data.map(str => {
+            return Number(str);
+          });
+          // remove NaN values
+          type_numbers = type_numbers.filter(function (value) {
+            return !Number.isNaN(value);
+          });
+          // sum all number values for each transport type
+          var type_sum = type_numbers.reduce((partialSum, a) => partialSum + a, 0);
+          annual_datasets.push({label:type, data:[type_sum], backgroundColor: random_rgba(),})
+        }
 
+        // set up chart
         var data = {
           labels: annual_labels,
           datasets: annual_datasets,
