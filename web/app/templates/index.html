@@ -48,7 +48,7 @@
               }
             }
           }
-          datasets.push({label:type, data:type_data, backgroundColor: randomColor({hue: 'green'}),})
+          datasets.push({label:type, data:type_data, backgroundColor: randomColor(),})
         }
 
         // set up chart
@@ -108,24 +108,30 @@
         var annual_datasets = []
         for (type of all_keys) {
           var type_data = []
+          var year_data = []
+          // for each year
           for (var y of x) {
             if (y.hasOwnProperty('months')) {
+              // for each month
               for (var z of y['months']) {
                 type_data.push(z[type])
               }
+              // turn the strings to numbers
+              var type_numbers = type_data.map(str => {
+                return Number(str);
+              });
+              // remove NaN values
+              type_numbers = type_numbers.filter(function (value) {
+                return !Number.isNaN(value);
+              });
+              // sum all number values for each transport type
+              var type_sum = type_numbers.reduce((partialSum, a) => partialSum + a, 0);
+              // add to year_data array and reset the type_data array
+              year_data.push(type_sum)
+              type_data = []
             }
           }
-          // turn the strings to numbers
-          var type_numbers = type_data.map(str => {
-            return Number(str);
-          });
-          // remove NaN values
-          type_numbers = type_numbers.filter(function (value) {
-            return !Number.isNaN(value);
-          });
-          // sum all number values for each transport type
-          var type_sum = type_numbers.reduce((partialSum, a) => partialSum + a, 0);
-          annual_datasets.push({label:type, data:[type_sum], backgroundColor: randomColor({hue: 'green'}),})
+          annual_datasets.push({label:type, data:year_data, backgroundColor: randomColor(),})
         }
 
         // set up chart
