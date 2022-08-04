@@ -1,12 +1,151 @@
 {
   "years": [
     {
+      "year": "2016",
+      "months": [
+        {
+          "month": "January",
+          "national rail": "0.1282245637",
+          "London Underground": "0.0787703077",
+          "short-haul flight": "0.2096562960"
+        },
+        {
+          "month": "March",
+          "national rail": "0.0336982150",
+          "London Underground": "0.0021482811",
+          "car": "0.0535702659",
+          "bus": "0.0016458761"
+        },
+        {
+          "month": "April",
+          "national rail": "0.0051404057",
+          "short-haul flight": "0.3366341797"
+        },
+        {
+          "month": "June",
+          "national rail": "0.0005711562",
+          "London Underground": "0.0020587694",
+          "car": "0.0241852216",
+          "short-haul flight": "0.2956765513",
+          "light rail and tram": "0.0007896360"
+        },
+        {
+          "month": "August",
+          "national rail": "0.0002855781",
+          "London Underground": "0.0010293847",
+          "car": "0.0455911950",
+          "short-haul flight": "0.0896197241"
+        },
+        {
+          "month": "September",
+          "national rail": "0.0107377363",
+          "London Underground": "0.0015664550",
+          "bus": "0.0008229381"
+        },
+        {
+          "month": "October",
+          "national rail": "0.0171918012",
+          "London Underground": "0.0005370703",
+          "bus": "0.0008229381"
+        },
+        {
+          "month": "November",
+          "national rail": "0.0002855781",
+          "London Underground": "0.0010293847",
+          "long-haul flight": "0.8218278851"
+        },
+        {
+          "month": "December",
+          "national rail": "0.0002855781",
+          "London Underground": "0.0010293847",
+          "long-haul flight": "0.8218278851"
+        }
+      ]
+    },
+    {
+      "year": "2017",
+      "months": [
+        {
+          "month": "January",
+          "national rail": "0.1256543608",
+          "London Underground": "0.0787703077"
+        },
+        {
+          "month": "March",
+          "London Underground": "0.0008951171",
+          "international rail": "0.0041774064"
+        },
+        {
+          "month": "May",
+          "national rail": "0.0050261744"
+        },
+        {
+          "month": "June",
+          "London Underground": "0.0008951171",
+          "international rail": "0.0040881904"
+        },
+        {
+          "month": "July",
+          "national rail": "0.0456924948",
+          "London Underground": "0.0010741406"
+        },
+        {
+          "month": "October",
+          "national rail": "0.0067396430",
+          "car": "0.1977141868"
+        },
+        {
+          "month": "November",
+          "national rail": "0.0209043164",
+          "London Underground": "0.0010741406",
+          "bus": "0.0032917522"
+        }
+      ]
+    },
+    {
+      "year": "2018",
+      "months": [
+        {
+          "month": "January",
+          "national rail": "0.1256543608",
+          "London Underground": "0.0787703077"
+        },
+        {
+          "month": "April",
+          "national rail": "0.0456924948",
+          "London Underground": "0.0010741406"
+        },
+        {
+          "month": "June",
+          "national rail": "0.0177629574",
+          "London Underground": "0.0004475586",
+          "short-haul flight": "0.1686111720",
+          "international rail": "0.0049461400",
+          "car": "0.1258595000"
+        },
+        {
+          "month": "August",
+          "national rail": "0.0447786450",
+          "London Underground": "0.0008951171"
+        },
+        {
+          "month": "September",
+          "national rail": "0.0211327789",
+          "London Underground": "0.0004475586"
+        },
+        {
+          "month": "October",
+          "national rail": "0.0067396430"
+        }
+      ]
+    },
+    {
       "year": "2019",
       "months": [
         {
           "month": "January",
-          "national rail": "0.0005711562",
-          "London Underground": "0.0020587694",
+          "national rail": "0.1422750058",
+          "London Underground": "0.0796654248",
           "international rail": "0.0078867032"
         },
         {
@@ -28,9 +167,9 @@
         },
         {
           "month": "August",
-          "national rail": "0.0455211480",
+          "national rail": "0.0289005030",
           "London Underground": "0.0013426757",
-          "international rail": "0.0020887032"
+          "international rail": "0.0041774064"
         },
         {
           "month": "September",
@@ -41,6 +180,33 @@
         {
           "month": "December",
           "national rail": "0.0050261744"
+        }
+      ]
+    },
+    {
+      "year": "2020",
+      "months": [
+        {
+          "month": "January",
+          "national rail": "0.0273583813",
+          "London Underground": "0.0168282021",
+          "light rail and tram": "0.0001841733"
+        },
+        {
+          "month": "February",
+          "national rail": "0.0209043164",
+          "London Underground": "0.0010741406",
+          "car": "0.0400870049"
+        },
+        {
+          "month": "August",
+          "van": "0.0083055411"
+        },
+        {
+          "month": "October",
+          "national rail": "0.0213612413",
+          "London Underground": "0.0007160937",
+          "car": "0.0299896748"
         }
       ]
     },
