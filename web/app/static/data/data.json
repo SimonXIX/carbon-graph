@@ -1,6 +1,50 @@
 {
   "years": [
     {
+      "year": "2019",
+      "months": [
+        {
+          "month": "January",
+          "national rail": "0.0005711562",
+          "London Underground": "0.0020587694",
+          "international rail": "0.0078867032"
+        },
+        {
+          "month": "March",
+          "national rail": "0.0488909695",
+          "London Underground": "0.0008951171"
+        },
+        {
+          "month": "April",
+          "national rail": "0.0667110425",
+          "London Underground": "0.0018797460",
+          "car": "0.0730998324"
+        },
+        {
+          "month": "June",
+          "national rail": "0.0005711562",
+          "London Underground": "0.0020587694",
+          "short-haul flight": "0.2145973628"
+        },
+        {
+          "month": "August",
+          "national rail": "0.0455211480",
+          "London Underground": "0.0013426757",
+          "international rail": "0.0020887032"
+        },
+        {
+          "month": "September",
+          "national rail": "0.0289005030",
+          "London Underground": "0.0004475586",
+          "car": "0.0166273399"
+        },
+        {
+          "month": "December",
+          "national rail": "0.0050261744"
+        }
+      ]
+    },
+    {
       "year": "2021",
       "months": [
         {
