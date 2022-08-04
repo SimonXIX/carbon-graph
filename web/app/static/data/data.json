@@ -48,6 +48,31 @@
       "year": "2021",
       "months": [
         {
+          "month": "June",
+          "national rail": "0.0037696308"
+        },
+        {
+          "month": "July",
+          "national rail": "0.0748214603",
+          "London Underground": "0.0010741406",
+          "car": "0.1445369308"
+        },
+        {
+          "month": "September",
+          "national rail": "0.0122227424",
+          "London Underground": "0.0007160937"
+        },
+        {
+          "month": "October",
+          "national rail": "0.0574011967",
+          "London Underground": "0.0014321874",
+          "light rail and tram": "0.0003223033"
+        },
+        {
+          "month": "November",
+          "national rail": "0.0022846247"
+        },
+        {
           "month": "December",
           "bus": "0.0032917522",
           "national rail": "0.0908709491",
