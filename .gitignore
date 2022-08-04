@@ -1,6 +1,4 @@
 web/app/__pycache__/
 .DS_Store
-.env.dev
-.env.prod
 carbon_data.xlsx
 ~$carbon_data.xlsx

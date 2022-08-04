@@ -22,6 +22,7 @@
       <script>
         // define variables
         var x = {{ data['years']|safe }}
+        var month_limit = {{ month_limit }}
         var labels = []
         var all_keys = []
         var datasets = []
@@ -38,6 +39,8 @@
             }
           }
         }
+        // show only the last x months of data (configured in environment file)
+        labels = labels.slice(-month_limit)
         // for each type of transport, push data into an array and add to dataset
         for (type of all_keys) {
           var type_data = []
@@ -48,6 +51,8 @@
               }
             }
           }
+          // show only the last x months of data (configured in environment file)
+          type_data = type_data.slice(-month_limit)
           datasets.push({label:type, data:type_data, backgroundColor: randomColor(),})
         }
 
@@ -64,7 +69,7 @@
             plugins: {
               title: {
                 display: true,
-                text: 'personal transportation carbon usage by month'
+                text: 'personal transportation carbon usage by month (last 6 months only)'
               },
             },
             responsive: true,

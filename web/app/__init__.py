@@ -21,6 +21,9 @@ moment.init_app(app)
 
 @app.route('/')
 def index():
+    # get month_limit from config file
+    month_limit = os.environ.get('MONTH_LIMIT')
+    # open JSON data
     json_data = open('./app/static/data/data.json')
     data = json.load(json_data)
-    return render_template('index.html', data=data)
+    return render_template('index.html', month_limit=month_limit, data=data)
