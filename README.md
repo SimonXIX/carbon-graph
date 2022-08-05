@@ -4,7 +4,7 @@
 
 This is a small Python and JavaScript web application to visualise how much carbon I use on personal transportation. This graph is based on artist [Ellie Harrison](https://www.ellieharrison.com/)'s Carbon Graph in her book *[The Glasgow Effect: A Tale of Class, Capitalism & Carbon Footprint](https://www.ellieharrison.com/commodities/glasgoweffect/)*, second edition (Edinburgh: Luath Press Ltd., 2021).
 
-Based on my existing records and calendar entries, I've entered every journey I've made on public or private transport into a spreadsheet (with some estimates for an approximate number commutes prior to Covid-19 based on number of working days that year). Distances of journeys are calculated using:
+Based on my existing records and calendar entries, I've entered every journey I've made on public or private transport into a spreadsheet (with some estimates for an approximate number of commutes prior to Covid-19 based on number of working days that year). Distances of journeys are calculated using:
 
 - [RailMiles Mileage Engine](https://my.railmiles.me/mileage-engine/) for all UK train journeys
 - [Google Maps](https://www.google.co.uk/maps) for all international train journeys, bus, car and all other land and sea transport

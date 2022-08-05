@@ -71,8 +71,8 @@ def index():
         #show only the last x months of data (configured in environment file)
         mode_data = mode_data[-(int(month_limit)):]
         random_colour = "#" + "%06x" % random.randint(0, 0xFFFFFF)
-        dataset = {"label": mode, "data": mode_data, "backgroundColor": random_colour}
-        month_datasets.append(dataset)
+        month_dataset = {"label": mode, "data": mode_data, "backgroundColor": random_colour}
+        month_datasets.append(month_dataset)
 
     # for each mode of transport, sum all the data for each year and add to year_datasets
     year_datasets = []
