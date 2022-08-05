@@ -23,14 +23,13 @@
         // define variables
         var x = {{ data['years']|safe }}
         var month_limit = {{ month_limit }}
-        var labels = []
+        var month_labels = {{ month_labels|safe }}
         var all_keys = []
         var datasets = []
         // get all the month labels and transportation types referenced in the JSON
         for (var y of x) {
           if (y.hasOwnProperty('months')) {
             for (var z of y['months']) {
-              labels.push(z['month'] + " " + y['year'])
               var keys = Object.keys(z)
               all_keys.push(Object.keys(z))
               all_keys = [].concat.apply([], all_keys)
@@ -39,8 +38,6 @@
             }
           }
         }
-        // show only the last x months of data (configured in environment file)
-        labels = labels.slice(-month_limit)
         // for each type of transport, push data into an array and add to dataset
         for (type of all_keys) {
           var type_data = []
@@ -58,7 +55,7 @@
 
         // set up chart
         var data = {
-          labels: labels,
+          labels: month_labels,
           datasets: datasets,
         };
 
@@ -100,15 +97,7 @@
 
       <script>
 
-        // get all the labels for years
-        var annual_labels = []
-        var x = {{ data['years']|safe }}
-        for (var y of x){
-          if (y.hasOwnProperty('months')){
-            annual_labels.push(y['year'])
-          }
-        }
-
+        var year_labels = {{ year_labels|safe }}
         // using the all_keys variable from above, get data for each transport type
         var annual_datasets = []
         for (type of all_keys) {
@@ -141,7 +130,7 @@
 
         // set up chart
         var data = {
-          labels: annual_labels,
+          labels: year_labels,
           datasets: annual_datasets,
         };
 
