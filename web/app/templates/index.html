@@ -20,7 +20,6 @@
       <canvas id="carbonGraphByYear" width="600" height="300"></canvas>
       <script>
         // retrieve variables passed from Python
-        var x = {{ data['years']|safe }}
         var month_limit = {{ month_limit }}
         var month_labels = {{ month_labels|safe }}
         var month_datasets = {{ month_datasets|safe }}

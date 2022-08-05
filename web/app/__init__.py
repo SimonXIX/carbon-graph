@@ -26,6 +26,7 @@ moment.init_app(app)
 def index():
     # get month_limit from config file
     month_limit = os.environ.get('MONTH_LIMIT')
+
     # open JSON data
     json_data = open('./app/static/data/data.json')
     data = json.load(json_data)
@@ -56,7 +57,7 @@ def index():
     modes = list(dict.fromkeys(modes))
     modes.remove('month')
 
-    # for each mode of transport, push data into an array and add to dataset
+    # for each mode of transport, push data into an array and add to month_datasets
     month_datasets = []
     for mode in modes:
         mode_data = []
@@ -73,7 +74,7 @@ def index():
         dataset = {"label": mode, "data": mode_data, "backgroundColor": random_colour}
         month_datasets.append(dataset)
 
-    # for each mode of transport, sum all the data for each year
+    # for each mode of transport, sum all the data for each year and add to year_datasets
     year_datasets = []
     for mode in modes:
         mode_data = []
@@ -94,7 +95,7 @@ def index():
         year_dataset = {"label": mode, "data": year_data, "backgroundColor": random_colour}
         year_datasets.append(year_dataset)
 
-    return render_template('index.html', month_limit=month_limit, data=data, month_labels=month_labels, year_labels=year_labels, month_datasets=month_datasets, year_datasets=year_datasets)
+    return render_template('index.html', month_limit=month_limit, month_labels=month_labels, year_labels=year_labels, month_datasets=month_datasets, year_datasets=year_datasets)
 
 @app.route('/what')
 def what():
