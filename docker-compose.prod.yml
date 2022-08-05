@@ -6,7 +6,7 @@ services:
     expose:
       - 5000
     volumes:
-      - ${PWD}/README.MD:/code/README.md
+      - ${PWD}/README.md:/code/README.md
     env_file:
       - ./.env.prod
     command: gunicorn --bind 0.0.0.0:5000 manage:app --timeout 120
