@@ -54,7 +54,9 @@ def index():
                 keys = month.keys()
                 for key in keys:
                     modes.append(key)
+    # remove duplicates
     modes = list(dict.fromkeys(modes))
+    # remove month names data
     modes.remove('month')
 
     # for each mode of transport, push data into an array and add to month_datasets
@@ -103,4 +105,5 @@ def what():
         text = f.read()
         html = markdown.markdown(text)
         html = re.sub("<h1.*?>\s", "", html)
+        html = re.sub("<h2>about</h2>", "<h2>what is this?</h2>", html)
     return render_template('what.html', html=html)
