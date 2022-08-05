@@ -7,5 +7,6 @@ services:
       - "5000:5000"
     volumes:
       - ./web:/code
+      - ${PWD}/README.MD:/code/README.md
     env_file:
       - ./.env.dev

@@ -1,6 +1,56 @@
 {
   "years": [
     {
+      "year": "2015",
+      "months": [
+        {
+          "month": "January",
+          "national rail": "0.1307947665",
+          "London Underground": "0.0787703077",
+          "bus": "0.0082225080",
+          "short-haul flight": "0.3574046457",
+          "international rail": "0.0003701800"
+        },
+        {
+          "month": "April",
+          "car": "0.2778277335"
+        },
+        {
+          "month": "May",
+          "national rail": "0.0051404057",
+          "bus": "0.0050521380",
+          "short-haul flight": "0.3025157850"
+        },
+        {
+          "month": "July",
+          "national rail": "0.0295287748",
+          "London Underground": "0.0010741406",
+          "car": "0.1118566500",
+          "bus": "0.0032917522",
+          "domestic flight": "0.2505426202"
+        },
+        {
+          "month": "September",
+          "national rail": "0.0005711562",
+          "London Underground": "0.0020587694",
+          "bus": "0.0043976100",
+          "short-haul flight": "0.4493770273"
+        },
+        {
+          "month": "October",
+          "national rail": "0.0067396430"
+        },
+        {
+          "month": "December",
+          "national rail": "0.0234745192",
+          "London Underground": "0.0010741406",
+          "bus": "0.0171295541",
+          "short-haul flight": "0.1990839198",
+          "international rail": "0.0013067800"
+        }
+      ]
+    },
+    {
       "year": "2016",
       "months": [
         {

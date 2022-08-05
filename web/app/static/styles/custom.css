@@ -22,12 +22,3 @@ main > .container {
 .footer {
   display: block;
 }
-
-.navbar-brand {
-    width: 100%;
-    left: 0;
-    top: 0;
-    text-align: center;
-    margin: auto;
-    padding-bottom: 20px;
-}

@@ -11,6 +11,8 @@ from flask_moment import Moment
 import requests
 import urllib.request, json
 import os
+import markdown
+import re
 
 # initiate Moment for datetime functions
 moment = Moment()
@@ -27,3 +29,11 @@ def index():
     json_data = open('./app/static/data/data.json')
     data = json.load(json_data)
     return render_template('index.html', month_limit=month_limit, data=data)
+
+@app.route('/what')
+def what():
+    with open('README.md', 'r') as f:
+        text = f.read()
+        html = markdown.markdown(text)
+        html = re.sub("<h1.*?>\s", "", html)
+    return render_template('what.html', html=html)
