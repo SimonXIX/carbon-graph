@@ -16,8 +16,8 @@
   <div class="container">
     <div class="row">
 
-      <canvas id="carbonGraph" width="600" height="300"></canvas>
-      <canvas id="carbonGraphYear" width="600" height="300"></canvas>
+      <canvas id="carbonGraphByMonth" width="600" height="300"></canvas>
+      <canvas id="carbonGraphByYear" width="600" height="300"></canvas>
       <script>
         // retrieve variables passed from Python
         var x = {{ data['years']|safe }}
@@ -62,13 +62,12 @@
         };
 
         var carbonGraph = new Chart(
-          document.getElementById('carbonGraph'),
+          document.getElementById('carbonGraphByMonth'),
           config
         );
       </script>
 
       <script>
-
         // retrieve variables passed from Python
         var year_labels = {{ year_labels|safe }}
         var year_datasets = {{ year_datasets|safe }}
@@ -110,7 +109,7 @@
         };
 
         var carbonGraphYear = new Chart(
-          document.getElementById('carbonGraphYear'),
+          document.getElementById('carbonGraphByYear'),
           config
         );
       </script>
