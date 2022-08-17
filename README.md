@@ -6,7 +6,8 @@ This is a small Python and JavaScript web application to visualise how much carb
 
 Based on my existing records and calendar entries, I've entered every journey I've made on public or private transport into a spreadsheet (with some estimates for an approximate number of commutes prior to Covid-19 based on number of working days that year). Distances of journeys are calculated using:
 
-- [RailMiles Mileage Engine](https://my.railmiles.me/mileage-engine/) for all UK train journeys
+- [RailMiles Mileage Engine](https://my.railmiles.me/mileage-engine/) for train journeys in England
+- [ScotRail's Carbon Calculator](https://www.scotrail.co.uk/carbon-calculator) for train journeys in Scotland
 - [Google Maps](https://www.google.co.uk/maps) for all international train journeys, bus, car and all other land and sea transport
 - [MapCrow](https://www.mapcrow.info/) Distance Calculator Between Cities for all plane journeys
 
