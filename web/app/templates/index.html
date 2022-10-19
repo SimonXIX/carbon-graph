@@ -16,13 +16,14 @@
   <div class="container">
     <div class="row">
 
-      <canvas id="carbonGraphByMonth" width="600" height="300"></canvas>
-      <canvas id="carbonGraphByYear" width="600" height="300"></canvas>
+      <canvas id="transportGraphByMonth" width="600" height="300"></canvas>
+      <canvas id="transportGraphByYear" width="600" height="300"></canvas>
+      <canvas id="energyGraphByMonth" width="600" height="300"></canvas>
       <script>
         // retrieve variables passed from Python
         var month_limit = {{ month_limit }}
-        var month_labels = {{ month_labels|safe }}
-        var month_datasets = {{ month_datasets|safe }}
+        var month_labels = {{ transport[0]|safe }}
+        var month_datasets = {{ transport[2]|safe }}
 
         // set up chart
         var data = {
@@ -61,15 +62,15 @@
         };
 
         var carbonGraph = new Chart(
-          document.getElementById('carbonGraphByMonth'),
+          document.getElementById('transportGraphByMonth'),
           config
         );
       </script>
 
       <script>
         // retrieve variables passed from Python
-        var year_labels = {{ year_labels|safe }}
-        var year_datasets = {{ year_datasets|safe }}
+        var year_labels = {{ transport[1]|safe }}
+        var year_datasets = {{ transport[3]|safe }}
 
         // set up chart
         var data = {
@@ -108,7 +109,55 @@
         };
 
         var carbonGraphYear = new Chart(
-          document.getElementById('carbonGraphByYear'),
+          document.getElementById('transportGraphByYear'),
+          config
+        );
+      </script>
+
+      <script>
+        // retrieve variables passed from Python
+        var month_limit = {{ month_limit }}
+        var month_labels = {{ energy[0]|safe }}
+        var month_datasets = {{ energy[2]|safe }}
+
+        // set up chart
+        var data = {
+          labels: month_labels,
+          datasets: month_datasets,
+        };
+
+        var config = {
+          type: 'bar',
+          data: data,
+          options: {
+            plugins: {
+              title: {
+                display: true,
+                text: 'energy carbon usage by month (last ' + month_limit + ' months only)'
+              },
+            },
+            responsive: true,
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: 'month'
+                },
+                stacked: true,
+              },
+              y: {
+                title: {
+                  display: true,
+                  text: 'metric tonnes (Mg) of carbon'
+                },
+                stacked: true
+              }
+            }
+          }
+        };
+
+        var carbonGraph = new Chart(
+          document.getElementById('energyGraphByMonth'),
           config
         );
       </script>

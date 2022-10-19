@@ -1,0 +1,37 @@
+{
+  "years": [
+    {
+      "year": "2022",
+      "months": [
+        {
+          "month": "February",
+          "electricity": "0.03779474"
+        },
+        {
+          "month": "March",
+          "electricity": "0.06242502"
+        },
+        {
+          "month": "April",
+          "electricity": "0.01443844"
+        },
+        {
+          "month": "June",
+          "electricity": "0.04480163"
+        },
+        {
+          "month": "July",
+          "electricity": "0.02017135"
+        },
+        {
+          "month": "August",
+          "electricity": "0.03227416"
+        },
+        {
+          "month": "September",
+          "electricity": "0.04565095"
+        }
+      ]
+    }
+  ]
+}
