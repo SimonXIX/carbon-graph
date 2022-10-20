@@ -7,7 +7,7 @@
 
 import random
 
-def process_data(data, month_limit):
+def process_dataset(data, month_limit):
     # get all the month labels
     month_labels = []
     for year in data['years']:
@@ -36,7 +36,7 @@ def process_data(data, month_limit):
     # remove month names data
     modes.remove('month')
 
-    # for each mode of transport, push data into an array and add to month_datasets
+    # for each mode, push data into an array and add to month_datasets
     month_datasets = []
     for mode in modes:
         mode_data = []
@@ -53,7 +53,7 @@ def process_data(data, month_limit):
         month_dataset = {"label": mode, "data": mode_data, "backgroundColor": random_colour}
         month_datasets.append(month_dataset)
 
-    # for each mode of transport, sum all the data for each year and add to year_datasets
+    # for each mode, sum all the data for each year and add to year_datasets
     year_datasets = []
     for mode in modes:
         mode_data = []

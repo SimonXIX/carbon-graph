@@ -7,20 +7,20 @@
           "month": "January",
           "national rail": "0.1293326067",
           "London Underground": "0.0787703077",
-          "bus": "0.0071384460",
+          "bus": "0.0067357000",
           "short-haul flight": "0.3981678396"
         },
         {
           "month": "February",
           "national rail": "0.0036782458",
-          "bus": "0.0306810000",
+          "bus": "0.0289500000",
           "short-haul flight": "0.3981678396"
         },
         {
           "month": "April",
           "national rail": "0.0227434393",
           "London Underground": "0.0025689862",
-          "bus": "0.0071377751",
+          "bus": "0.0067350670",
           "short-haul flight": "0.3566803772",
           "international rail": "0.0018598200",
           "domestic flight": "0.0895722116",
@@ -37,27 +37,27 @@
         {
           "month": "June",
           "national rail": "0.0036782458",
-          "bus": "0.0155348130",
+          "bus": "0.0146583500",
           "short-haul flight": "0.4071920310"
         },
         {
           "month": "August",
           "national rail": "0.0209043164",
           "London Underground": "0.0010741406",
-          "bus": "0.0016458761",
-          "van": "0.0113327945"
+          "bus": "0.0015530170",
+          "van": "0.0108816631"
         },
         {
           "month": "October",
           "national rail": "0.0209043164",
           "London Underground": "0.0011349853",
-          "bus": "0.0046676192"
+          "bus": "0.0044042754"
         },
         {
           "month": "November",
           "national rail": "0.0005711562",
           "London Underground": "0.0020587694",
-          "bus": "0.0043780304",
+          "bus": "0.0041310251",
           "domestic flight": "0.3381086864",
           "long-haul flight": "1.8941230867"
         },
@@ -65,7 +65,7 @@
           "month": "December",
           "national rail": "0.0364432921",
           "London Underground": "0.0018797460",
-          "bus": "0.0154836780"
+          "bus": "0.0146101000"
         }
       ]
     },
@@ -76,33 +76,33 @@
           "month": "January",
           "national rail": "0.1307947665",
           "London Underground": "0.0787703077",
-          "bus": "0.0082225080",
+          "bus": "0.0077586000",
           "short-haul flight": "0.3574046457",
           "international rail": "0.0003701800"
         },
         {
           "month": "April",
-          "car": "0.2778277335"
+          "car": "0.2731689240"
         },
         {
           "month": "May",
           "national rail": "0.0051404057",
-          "bus": "0.0050521380",
+          "bus": "0.0047671000",
           "short-haul flight": "0.3025157850"
         },
         {
           "month": "July",
           "national rail": "0.0295287748",
           "London Underground": "0.0010741406",
-          "car": "0.1118566500",
-          "bus": "0.0032917522",
+          "car": "0.1099809596",
+          "bus": "0.0031060339",
           "domestic flight": "0.2505426202"
         },
         {
           "month": "September",
           "national rail": "0.0005711562",
           "London Underground": "0.0020587694",
-          "bus": "0.0043976100",
+          "bus": "0.0041495000",
           "short-haul flight": "0.4493770273"
         },
         {
@@ -113,7 +113,7 @@
           "month": "December",
           "national rail": "0.0234745192",
           "London Underground": "0.0010741406",
-          "bus": "0.0087843221",
+          "bus": "0.0082887170",
           "short-haul flight": "0.1990839198",
           "international rail": "0.0013067800"
         }
@@ -132,8 +132,8 @@
           "month": "March",
           "national rail": "0.0336982150",
           "London Underground": "0.0021482811",
-          "car": "0.0535702659",
-          "bus": "0.0016458761"
+          "car": "0.0526719623",
+          "bus": "0.0015530170"
         },
         {
           "month": "April",
@@ -144,7 +144,7 @@
           "month": "June",
           "national rail": "0.0005711562",
           "London Underground": "0.0020587694",
-          "car": "0.0241852216",
+          "car": "0.0237796669",
           "short-haul flight": "0.2956765513",
           "light rail and tram": "0.0007896360"
         },
@@ -152,20 +152,20 @@
           "month": "August",
           "national rail": "0.0002855781",
           "London Underground": "0.0010293847",
-          "car": "0.0455911950",
+          "car": "0.0448266900",
           "short-haul flight": "0.0896197241"
         },
         {
           "month": "September",
           "national rail": "0.0107377363",
           "London Underground": "0.0015664550",
-          "bus": "0.0008229381"
+          "bus": "0.0007765085"
         },
         {
           "month": "October",
           "national rail": "0.0171918012",
           "London Underground": "0.0005370703",
-          "bus": "0.0008229381"
+          "bus": "0.0007765085"
         },
         {
           "month": "November",
@@ -211,13 +211,13 @@
         {
           "month": "October",
           "national rail": "0.0067396430",
-          "car": "0.1977141868"
+          "car": "0.1943987773"
         },
         {
           "month": "November",
           "national rail": "0.0209043164",
           "London Underground": "0.0010741406",
-          "bus": "0.0032917522"
+          "bus": "0.0031060339"
         }
       ]
     },
@@ -240,7 +240,7 @@
           "London Underground": "0.0004475586",
           "short-haul flight": "0.1686111720",
           "international rail": "0.0049461400",
-          "car": "0.1258595000"
+          "car": "0.1237490000"
         },
         {
           "month": "August",
@@ -276,7 +276,7 @@
           "month": "April",
           "national rail": "0.0667110425",
           "London Underground": "0.0018797460",
-          "car": "0.0730998324"
+          "car": "0.0718740433"
         },
         {
           "month": "June",
@@ -294,7 +294,7 @@
           "month": "September",
           "national rail": "0.0289005030",
           "London Underground": "0.0004475586",
-          "car": "0.0166273399"
+          "car": "0.0163485210"
         },
         {
           "month": "December",
@@ -315,17 +315,17 @@
           "month": "February",
           "national rail": "0.0209043164",
           "London Underground": "0.0010741406",
-          "car": "0.0400870049"
+          "car": "0.0394147980"
         },
         {
           "month": "August",
-          "van": "0.0083055411"
+          "van": "0.0079749175"
         },
         {
           "month": "October",
           "national rail": "0.0213612413",
           "London Underground": "0.0007160937",
-          "car": "0.0299896748"
+          "car": "0.0294867870"
         }
       ]
     },
@@ -340,7 +340,7 @@
           "month": "July",
           "national rail": "0.0748214603",
           "London Underground": "0.0010741406",
-          "car": "0.1445369308"
+          "car": "0.1421132346"
         },
         {
           "month": "September",
@@ -359,10 +359,10 @@
         },
         {
           "month": "December",
-          "bus": "0.0032917522",
+          "bus": "0.0031060339",
           "national rail": "0.0908709491",
           "London Underground": "0.0017902343",
-          "van": "0.1610654006"
+          "van": "0.1546537741"
         }
       ]
     },
@@ -372,53 +372,53 @@
         {
           "month": "January",
           "car": "0.0010773271",
-          "national rail": "0.0361541865"
+          "national rail": "0.0361884559"
         },
         {
           "month": "February",
-          "car": "0.0090694581"
+          "car": "0.0089173751"
         },
         {
           "month": "March",
-          "car": "0.0193481773",
-          "national rail": "0.0376391926"
+          "car": "0.0190237336",
+          "national rail": "0.0375021151"
         },
         {
           "month": "April",
-          "national rail": "0.0570585029"
+          "national rail": "0.0571270417"
         },
         {
           "month": "May",
-          "bus": "0.0007406442",
+          "bus": "0.0006988576",
           "national rail": "0.0657400770",
           "international rail": "0.0020887032"
         },
         {
           "month": "June",
-          "national rail": "0.0365539959"
+          "national rail": "0.0365882652"
         },
         {
           "month": "July",
-          "car": "0.0317431034",
-          "bus": "0.0024688142",
-          "national rail": "0.0496905881"
+          "car": "0.0312108129",
+          "bus": "0.0023295254",
+          "national rail": "0.0500104356"
         },
         {
           "month": "August",
-          "bus": "0.0011850308",
+          "bus": "0.0011181722",
           "national rail": "0.0232232105",
           "light rail and tram": "0.0002486340"
         },
         {
           "month": "September",
-          "bus": "0.0005266804",
+          "bus": "0.0004969654",
           "national rail": "0.0589318952",
-          "car": "0.0065300098",
+          "car": "0.0064205101",
           "light rail and tram": "0.0003867640"
         },
         {
           "month": "October",
-          "car": "0.0679302413",
+          "car": "0.0667911395",
           "national rail": "0.0010280811"
         }
       ]

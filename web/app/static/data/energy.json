@@ -5,31 +5,38 @@
       "months": [
         {
           "month": "February",
-          "electricity": "0.03779474"
+          "electricity": "0.03442164",
+          "gas": "0.2079"
         },
         {
           "month": "March",
-          "electricity": "0.06242502"
+          "electricity": "0.05685372",
+          "gas": "0.30456"
         },
         {
           "month": "April",
-          "electricity": "0.01443844"
+          "electricity": "0.01314984",
+          "gas": "0.02862"
         },
         {
           "month": "June",
-          "electricity": "0.04480163"
+          "electricity": "0.04080318",
+          "gas": "0.05742"
         },
         {
           "month": "July",
-          "electricity": "0.02017135"
+          "electricity": "0.0183711",
+          "gas": "0.02862"
         },
         {
           "month": "August",
-          "electricity": "0.03227416"
+          "electricity": "0.02939376",
+          "gas": "0.03438"
         },
         {
           "month": "September",
-          "electricity": "0.04565095"
+          "electricity": "0.0415767",
+          "gas": "0.03438"
         }
       ]
     }

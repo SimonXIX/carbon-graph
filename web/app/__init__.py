@@ -31,13 +31,13 @@ def index():
     # open JSON data
     json_data = open('./app/static/data/transport.json')
     transport_data = json.load(json_data)
-    transport_processed = data.process_data(transport_data, month_limit)
+    transport_processed = data.process_dataset(transport_data, month_limit)
 
     # process energy data
     # open JSON data
     json_data = open('./app/static/data/energy.json')
     energy_data = json.load(json_data)
-    energy_processed = data.process_data(energy_data, month_limit)
+    energy_processed = data.process_dataset(energy_data, month_limit)
 
     return render_template('index.html', month_limit=month_limit, transport=transport_processed, energy=energy_processed)
 
