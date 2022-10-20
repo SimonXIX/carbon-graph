@@ -33,7 +33,7 @@ def index():
     transport_data = json.load(json_data)
     transport_processed = data.process_dataset(transport_data, month_limit)
 
-    # process energy data
+    # process home energy data
     # open JSON data
     json_data = open('./app/static/data/energy.json')
     energy_data = json.load(json_data)
@@ -49,3 +49,29 @@ def what():
         html = re.sub("<h1.*?>\s", "", html)
         html = re.sub("<h2>about</h2>", "<h2>what is this?</h2>", html)
     return render_template('what.html', html=html)
+
+@app.route('/transportation')
+def transportation():
+    # get month_limit from config file
+    month_limit = os.environ.get('MONTH_LIMIT')
+
+    # process personal transportation data
+    # open JSON data
+    json_data = open('./app/static/data/transport.json')
+    transport_data = json.load(json_data)
+    transport_processed = data.process_dataset(transport_data, month_limit)
+
+    return render_template('transportation.html', month_limit=month_limit, transport=transport_processed)
+
+@app.route('/energy')
+def energy():
+    # get month_limit from config file
+    month_limit = os.environ.get('MONTH_LIMIT')
+
+    # process home energy data
+    # open JSON data
+    json_data = open('./app/static/data/energy.json')
+    energy_data = json.load(json_data)
+    energy_processed = data.process_dataset(energy_data, month_limit)
+
+    return render_template('energy.html', month_limit=month_limit, energy=energy_processed)

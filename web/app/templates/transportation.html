@@ -1,0 +1,115 @@
+<!--
+# @name: transportation.html
+# @creation_date: 2022-10-20
+# @license: The MIT License <https://opensource.org/licenses/MIT>
+# @author: Simon Bowie <simon.bowie.19@gmail.com>
+# @purpose: Template for transportation page
+# @acknowledgements:
+-->
+
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+
+      <canvas id="transportGraphByMonth" width="600" height="300"></canvas>
+      <canvas id="transportGraphByYear" width="600" height="300"></canvas>
+      <script>
+        // retrieve variables passed from Python
+        var month_limit = {{ month_limit }}
+        var month_labels = {{ transport[0]|safe }}
+        var month_datasets = {{ transport[2]|safe }}
+
+        // set up chart
+        var data = {
+          labels: month_labels,
+          datasets: month_datasets,
+        };
+
+        var config = {
+          type: 'bar',
+          data: data,
+          options: {
+            plugins: {
+              title: {
+                display: true,
+                text: 'personal transportation carbon usage by month (last ' + month_limit + ' months only)'
+              },
+            },
+            responsive: true,
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: 'month'
+                },
+                stacked: true,
+              },
+              y: {
+                title: {
+                  display: true,
+                  text: 'metric tonnes (Mg) of carbon'
+                },
+                stacked: true
+              }
+            }
+          }
+        };
+
+        var carbonGraph = new Chart(
+          document.getElementById('transportGraphByMonth'),
+          config
+        );
+      </script>
+
+      <script>
+        // retrieve variables passed from Python
+        var year_labels = {{ transport[1]|safe }}
+        var year_datasets = {{ transport[3]|safe }}
+
+        // set up chart
+        var data = {
+          labels: year_labels,
+          datasets: year_datasets,
+        };
+
+        var config = {
+          type: 'bar',
+          data: data,
+          options: {
+            plugins: {
+              title: {
+                display: true,
+                text: 'personal transportation carbon usage by year'
+              },
+            },
+            responsive: true,
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: 'year'
+                },
+                stacked: true,
+              },
+              y: {
+                title: {
+                  display: true,
+                  text: 'metric tonnes (Mg) of carbon'
+                },
+                stacked: true
+              }
+            }
+          }
+        };
+
+        var carbonGraphYear = new Chart(
+          document.getElementById('transportGraphByYear'),
+          config
+        );
+      </script>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,119 @@
+<!--
+# @name: index.html
+# @version: 0.1
+# @creation_date: 2022-06-07
+# @license: The MIT License <https://opensource.org/licenses/MIT>
+# @author: Simon Bowie <simon.bowie.19@gmail.com>
+# @purpose: Basic layout for homepage
+# @acknowledgements:
+# https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3
+# Bootstrap 5.1.3: https://getbootstrap.com/
+-->
+
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+
+      <canvas id="energyGraphByMonth" width="600" height="300"></canvas>
+      <canvas id="energyGraphByYear" width="600" height="300"></canvas>
+
+      <script>
+        // retrieve variables passed from Python
+        var month_limit = {{ month_limit }}
+        var month_labels = {{ energy[0]|safe }}
+        var month_datasets = {{ energy[2]|safe }}
+
+        // set up chart
+        var data = {
+          labels: month_labels,
+          datasets: month_datasets,
+        };
+
+        var config = {
+          type: 'bar',
+          data: data,
+          options: {
+            plugins: {
+              title: {
+                display: true,
+                text: 'home energy carbon usage by month (last ' + month_limit + ' months only)'
+              },
+            },
+            responsive: true,
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: 'month'
+                },
+                stacked: true,
+              },
+              y: {
+                title: {
+                  display: true,
+                  text: 'metric tonnes (Mg) of carbon'
+                },
+                stacked: true
+              }
+            }
+          }
+        };
+
+        var carbonGraph = new Chart(
+          document.getElementById('energyGraphByMonth'),
+          config
+        );
+      </script>
+
+      <script>
+        // retrieve variables passed from Python
+        var year_labels = {{ energy[1]|safe }}
+        var year_datasets = {{ energy[3]|safe }}
+
+        // set up chart
+        var data = {
+          labels: year_labels,
+          datasets: year_datasets,
+        };
+
+        var config = {
+          type: 'bar',
+          data: data,
+          options: {
+            plugins: {
+              title: {
+                display: true,
+                text: 'home energy carbon usage by year'
+              },
+            },
+            responsive: true,
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: 'month'
+                },
+                stacked: true,
+              },
+              y: {
+                title: {
+                  display: true,
+                  text: 'metric tonnes (Mg) of carbon'
+                },
+                stacked: true
+              }
+            }
+          }
+        };
+
+        var carbonGraph = new Chart(
+          document.getElementById('energyGraphByYear'),
+          config
+        );
+      </script>
+
+    </div>
+  </div>
+{% endblock %}
