@@ -27,19 +27,23 @@ def index():
     # get month_limit from config file
     month_limit = os.environ.get('MONTH_LIMIT')
 
-    # process personal transportation data
-    # open JSON data
+    # open personal transportation data
     json_data = open('./app/static/data/transport.json')
-    transport_data = json.load(json_data)
-    transport_processed = data.process_dataset(transport_data, month_limit)
+    transport_data = []
+    transport_data.append(json.load(json_data))
+    transport_data.append('transportation')
 
-    # process home energy data
-    # open JSON data
+    # open home energy data
     json_data = open('./app/static/data/energy.json')
-    energy_data = json.load(json_data)
-    energy_processed = data.process_dataset(energy_data, month_limit)
+    energy_data = []
+    energy_data.append(json.load(json_data))
+    energy_data.append('energy')
 
-    return render_template('index.html', month_limit=month_limit, transport=transport_processed, energy=energy_processed)
+    merged_data = data.merge_datasets(transport_data, energy_data)
+
+    merged_processed = data.process_dataset(merged_data, month_limit)
+
+    return render_template('index.html', month_limit=month_limit, total=merged_processed)
 
 @app.route('/what')
 def what():

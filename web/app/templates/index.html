@@ -16,14 +16,13 @@
   <div class="container">
     <div class="row">
 
-      <canvas id="transportGraphByMonth" width="600" height="300"></canvas>
-      <canvas id="transportGraphByYear" width="600" height="300"></canvas>
-      <canvas id="energyGraphByMonth" width="600" height="300"></canvas>
+      <canvas id="totalGraphByMonth" width="600" height="300"></canvas>
+      <canvas id="totalGraphByYear" width="600" height="300"></canvas>
       <script>
         // retrieve variables passed from Python
         var month_limit = {{ month_limit }}
-        var month_labels = {{ transport[0]|safe }}
-        var month_datasets = {{ transport[2]|safe }}
+        var month_labels = {{ total[0]|safe }}
+        var month_datasets = {{ total[2]|safe }}
 
         // set up chart
         var data = {
@@ -38,7 +37,7 @@
             plugins: {
               title: {
                 display: true,
-                text: 'personal transportation carbon usage by month (last ' + month_limit + ' months only)'
+                text: 'total carbon usage by month (last ' + month_limit + ' months only)'
               },
             },
             responsive: true,
@@ -63,15 +62,15 @@
 
         Chart.defaults.font.family = 'Poppins'
         var carbonGraph = new Chart(
-          document.getElementById('transportGraphByMonth'),
+          document.getElementById('totalGraphByMonth'),
           config
         );
       </script>
 
       <script>
         // retrieve variables passed from Python
-        var year_labels = {{ transport[1]|safe }}
-        var year_datasets = {{ transport[3]|safe }}
+        var year_labels = {{ total[1]|safe }}
+        var year_datasets = {{ total[3]|safe }}
 
         // set up chart
         var data = {
@@ -86,56 +85,7 @@
             plugins: {
               title: {
                 display: true,
-                text: 'personal transportation carbon usage by year'
-              },
-            },
-            responsive: true,
-            scales: {
-              x: {
-                title: {
-                  display: true,
-                  text: 'year'
-                },
-                stacked: true,
-              },
-              y: {
-                title: {
-                  display: true,
-                  text: 'metric tonnes (Mg) of carbon'
-                },
-                stacked: true
-              }
-            }
-          }
-        };
-
-        Chart.defaults.font.family = 'Poppins'
-        var carbonGraphYear = new Chart(
-          document.getElementById('transportGraphByYear'),
-          config
-        );
-      </script>
-
-      <script>
-        // retrieve variables passed from Python
-        var month_limit = {{ month_limit }}
-        var month_labels = {{ energy[0]|safe }}
-        var month_datasets = {{ energy[2]|safe }}
-
-        // set up chart
-        var data = {
-          labels: month_labels,
-          datasets: month_datasets,
-        };
-
-        var config = {
-          type: 'bar',
-          data: data,
-          options: {
-            plugins: {
-              title: {
-                display: true,
-                text: 'energy carbon usage by month (last ' + month_limit + ' months only)'
+                text: 'total carbon usage by year'
               },
             },
             responsive: true,
@@ -160,7 +110,7 @@
 
         Chart.defaults.font.family = 'Poppins'
         var carbonGraph = new Chart(
-          document.getElementById('energyGraphByMonth'),
+          document.getElementById('totalGraphByYear'),
           config
         );
       </script>

@@ -75,3 +75,37 @@ def process_dataset(data, month_limit):
         year_datasets.append(year_dataset)
 
     return month_labels, year_labels, month_datasets, year_datasets
+
+def merge_datasets(base_data, data_to_merge):
+
+    base_data = sum_dataset(base_data[0], base_data[1])
+    data_to_merge = sum_dataset(data_to_merge[0], data_to_merge[1])
+
+    for year_index, year_base in enumerate(base_data['years']):
+        if "months" in year_base:
+            for month_index, month_base in enumerate(year_base['months']):
+                year_value = year_base['year']
+                month_value = month_base['month']
+                for year_merge in data_to_merge['years']:
+                    if year_merge['year'] == year_value:
+                        for month_merge in year_merge['months']:
+                            if month_merge['month'] == month_value:
+                                month_base.update(month_merge)
+                base_data['years'][year_index]['months'][month_index] = month_base
+
+    return base_data
+
+def sum_dataset(data, type):
+
+    for year_index, year in enumerate(data['years']):
+        if "months" in year:
+            for month_index, month in enumerate(year['months']):
+                month_value = month['month']
+                month.pop('month')
+                month_floats = [float(x) for x in month.values()]
+                month_sum = sum(month_floats)
+                month = {"month": month_value, type: month_sum}
+
+                data['years'][year_index]['months'][month_index] = month
+
+    return data
