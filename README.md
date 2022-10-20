@@ -34,3 +34,7 @@ Home energy carbon usage is similarly based on existing records of gas and elect
 As above, the total kWh for each energy mode for each month is then multiplied by the [most up-to-date conversion factors](https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2022) issued by the UK Government's Department for Business, Energy & Industrial Strategy in June 2022 (revised September 2022).
 
 The total kilograms of carbon dioxide equivalent for each energy mode is then divided by 1000 to get the total weight in metric tonnes and data is manually transferred to the Json format in energy.json. The application reads that data, sums the data for each year, parses it using Python into the format required by Chart.js, and passes it to JavaScript to use [Chart.js](https://www.chartjs.org/) to render charts.
+
+### server
+
+I've also included an estimated figure for the annual energy consumption of my personal Virtual Private Server used to host this site (and other sites and services that I use). This figure is set in the .env file and is based on the calculation for a cloud server using non-green electricity in a [GoClimate blog post from 11 October 2022](https://www.goclimate.com/blog/the-carbon-footprint-of-servers/).

@@ -109,3 +109,19 @@ def sum_dataset(data, type):
                 data['years'][year_index]['months'][month_index] = month
 
     return data
+
+def add_annual_server_carbon(dataset, kg):
+
+    kg = float(kg)
+    tonnes = kg / 1000
+
+    number_of_years = len(dataset[0]['data'])
+
+    server_data = [tonnes] * number_of_years
+    server_data[0] = '0'
+
+    random_colour = "#" + "%06x" % random.randint(0, 0xFFFFFF)
+    server_dataset = {"label": "cloud server hosting this site", "data": server_data, "backgroundColor": random_colour}
+    dataset.append(server_dataset)
+
+    return dataset

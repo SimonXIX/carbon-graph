@@ -26,22 +26,27 @@ moment.init_app(app)
 def index():
     # get month_limit from config file
     month_limit = os.environ.get('MONTH_LIMIT')
+    # get cloud server carbon usage from config file
+    server_carbon = os.environ.get('SERVER_CARBON')
 
     # open personal transportation data
     json_data = open('./app/static/data/transport.json')
     transport_data = []
     transport_data.append(json.load(json_data))
-    transport_data.append('transportation')
+    transport_data.append('personal transportation')
 
     # open home energy data
     json_data = open('./app/static/data/energy.json')
     energy_data = []
     energy_data.append(json.load(json_data))
-    energy_data.append('energy')
+    energy_data.append('home energy')
 
     merged_data = data.merge_datasets(transport_data, energy_data)
 
     merged_processed = data.process_dataset(merged_data, month_limit)
+
+    merged_processed = list(merged_processed)
+    merged_processed[3] = data.add_annual_server_carbon(merged_processed[3], server_carbon)
 
     return render_template('index.html', month_limit=month_limit, total=merged_processed)
 
