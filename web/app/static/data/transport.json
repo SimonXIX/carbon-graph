@@ -418,9 +418,14 @@
         },
         {
           "month": "October",
+          "bus": "0.0009939309",
           "petrol car": "0.0667911395",
           "hybrid car": "0.0566437589",
           "national rail": "0.0013821980"
+        },
+        {
+          "month": "November",
+          "national rail": "0.0001142312"
         }
       ]
     }
