@@ -29,7 +29,7 @@ The total kilograms of carbon dioxide equivalent for each transportation mode is
 
 ### energy
 
-Home energy carbon usage is similarly based on existing records of gas and electricity meter readings sent to my energy provider. Gas consumption in kWh for each period is provided by my energy provider based on their conversions of cubic feet of gas used to kWh.
+Home energy carbon usage is similarly based on existing records of gas and electricity meter readings sent to my energy provider. Gas consumption in kWh for each period is based on historical records from my energy supplier and their conversion of cubic feet of gas to kWh working out as approximately 32 kWh per ft<sub>3</sub> of gas. Electricity consumption uses a one-to-one conversion between meter readings and kWh.
 
 As above, the total kWh for each energy mode for each month is then multiplied by the [most up-to-date conversion factors](https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2022) issued by the UK Government's Department for Business, Energy & Industrial Strategy in June 2022 (revised September 2022).
 
