@@ -6,41 +6,47 @@
         {
           "month": "February",
           "electricity": "0.03442164",
-          "gas": "0.2079"
+          "gas": "0.20736"
         },
         {
           "month": "March",
           "electricity": "0.05685372",
-          "gas": "0.30456"
+          "gas": "0.30528"
         },
         {
           "month": "April",
           "electricity": "0.01314984",
-          "gas": "0.02862"
+          "gas": "0.0288"
         },
         {
           "month": "June",
           "electricity": "0.04080318",
-          "gas": "0.05742"
+          "gas": "0.0576"
         },
         {
           "month": "July",
           "electricity": "0.0183711",
-          "gas": "0.02862"
+          "gas": "0.0288"
         },
         {
           "month": "August",
           "electricity": "0.02939376",
-          "gas": "0.03438"
+          "gas": "0.03456"
         },
         {
           "month": "September",
           "electricity": "0.0415767",
-          "gas": "0.03438"
+          "gas": "0.05184"
         },
         {
           "month": "October",
-          "electricity": "0.01991814"
+          "electricity": "0.01991814",
+          "gas": "0.04608"
+        },
+        {
+          "month": "November",
+          "electricity": "0.03229446",
+          "gas": "0.08064"
         }
       ]
     }
