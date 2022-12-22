@@ -427,6 +427,12 @@
           "month": "November",
           "bus": "0.0004969654",
           "national rail": "0.0467377107"
+        },
+        {
+          "month": "December",
+          "bus": "0.0009939309",
+          "petrol car": "0.0402646000",
+          "national rail": "0.0006853874"
         }
       ]
     }
