@@ -4,6 +4,8 @@
 
 This is a small Python and JavaScript web application to visualise how much carbon I use on personal transportation and home energy. This graph is based on artist [Ellie Harrison](https://www.ellieharrison.com/)'s Carbon Graph in her book *[The Glasgow Effect: A Tale of Class, Capitalism & Carbon Footprint](https://www.ellieharrison.com/commodities/glasgoweffect/)*, second edition (Edinburgh: Luath Press Ltd., 2021).
 
+Caveat: The concept of a "personal carbon footprint" is itself propaganda for fossil fuel companies in order to shift responsibility for reducing worldwide carbon emissions on to the individual rather than the small number of corporations actually responsible for the majority of the world's fossil fuel usage. The idea was popularised by a 2004 marketing campaign of BP designed by PR firm Ogilvy & Mather ([Kaufman, 2020](https://mashable.com/feature/carbon-footprint-pr-campaign-sham)). BP made no attempt to reduce their carbon footprint. 
+
 ### transportation
 
 Based on my existing records and calendar entries, I've entered every journey I've made on public or private transport into a spreadsheet (with some estimates for an approximate number of commutes prior to Covid-19 based on number of working days that year). Distances of journeys are calculated using:
