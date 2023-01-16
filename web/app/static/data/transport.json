@@ -441,8 +441,9 @@
       "months": [
         {
           "month": "January",
-          "bus": "0.0004969654",
-          "petrol car": "0.1438669850"
+          "bus": "0.0014908963",
+          "petrol car": "0.1438669850",
+          "national rail": "0.0006853874"
         }
       ]
     }
