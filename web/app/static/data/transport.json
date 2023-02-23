@@ -443,11 +443,11 @@
           "month": "January",
           "bus": "0.0014908963",
           "petrol car": "0.1438669850",
-          "national rail": "0.0458752648"
+          "national rail": "0.0455325711"
         },
         {
           "month": "February",
-          "national rail": "0.0294031204",
+          "national rail": "0.0513126717",
           "light rail and tram": "0.0001841733"
         }
       ]
