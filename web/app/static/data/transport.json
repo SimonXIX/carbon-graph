@@ -459,10 +459,11 @@
         },
         {
           "month": "April",
-          "national rail": "0.0458352839",
+          "national rail": "0.0558076709",
           "London Underground": "0.0001432187",
           "international rail": "0.0047372650",
-          "bus": "0.0020810427"
+          "bus": "0.0031370943",
+          "taxi": "0.0008139804"
         }
       ]
     }
