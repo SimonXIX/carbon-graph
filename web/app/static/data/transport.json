@@ -478,6 +478,10 @@
           "month": "June",
           "national rail": "0.0301570466",
           "light rail and tram": "0.0000736693"
+        },
+        {
+          "month": "July",
+          "national rail": "0.0091613452"
         }
       ]
     }
