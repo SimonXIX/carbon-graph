@@ -481,7 +481,9 @@
         },
         {
           "month": "July",
-          "national rail": "0.0095040389"
+          "bus": "0.0004969654",
+          "national rail": "0.0193564831",
+          "light rail and tram": "0.0002117993"
         }
       ]
     }
