@@ -482,8 +482,13 @@
         {
           "month": "July",
           "bus": "0.0009939309",
-          "national rail": "0.0196991768",
+          "national rail": "0.0198705237",
           "light rail and tram": "0.0002117993"
+        },
+        {
+          "month": "August",
+          "national rail": "0.0683502607",
+          "London Underground": "0.0002193037"
         }
       ]
     }
