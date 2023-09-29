@@ -97,6 +97,11 @@
           "month": "August",
           "electricity": "0.02185194",
           "gas": "0.0288"
+        },
+        {
+          "month": "September",
+          "electricity": "0.02378574",
+          "gas": "0.0288"
         }
       ]
     }
