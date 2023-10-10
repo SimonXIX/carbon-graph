@@ -499,7 +499,8 @@
         },
         {
           "month": "October",
-          "national rail": "0.0014050442"
+          "bus": "0.0004969654",
+          "national rail": "0.0015763911"
         }
       ]
     }
