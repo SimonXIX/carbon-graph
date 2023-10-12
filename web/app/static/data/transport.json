@@ -500,7 +500,8 @@
         {
           "month": "October",
           "bus": "0.0004969654",
-          "national rail": "0.0015763911"
+          "national rail": "0.0017477379",
+          "taxi": "0.0012449113"
         }
       ]
     }
