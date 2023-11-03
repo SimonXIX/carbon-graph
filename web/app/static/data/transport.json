@@ -504,6 +504,10 @@
           "light rail and tram": "0.0002117993",
           "taxi": "0.0012449113",
           "hybrid car": "0.0008319552"
+        },
+        {
+          "month": "November",
+          "national rail": "0.0003426937"
         }
       ]
     }
