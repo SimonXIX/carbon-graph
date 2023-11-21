@@ -507,7 +507,10 @@
         },
         {
           "month": "November",
-          "national rail": "0.0054259838"
+          "bus": "0.0012890041",
+          "national rail": "0.0060885249",
+          "London Underground": "0.0008056054",
+          "domestic flight": "0.1364574497"
         }
       ]
     }
