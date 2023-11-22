@@ -17,7 +17,7 @@ Based on my existing records and calendar entries, I've entered every journey I'
 
 The spreadsheet converts each journey to kilometres (if not already entered in kilometres) and totals the monthly distance for each mode of transportation.
 
-The total monthly distance in kilometres for each transportation mode is then multiplied by the [most up-to-date conversion factors](https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2022) issued by the UK Government's Department for Business, Energy & Industrial Strategy in June 2022 (revised September 2022). The kg CO<sub>2</sub>e (kilograms of carbon dioxide equivalent) conversion factors take into account the impact of the seven main greenhouse gases that contribute to climate change as defined by the [Kyoto Protocol](https://unfccc.int/kyoto_protocol). The greenhouse gases are:
+The total monthly distance in kilometres for each transportation mode is then multiplied by the [conversion factors for that year](https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting) issued by the UK Government (most recently by the Department for Energy Security and Net Zero in June 2023). The kg CO<sub>2</sub>e (kilograms of carbon dioxide equivalent) conversion factors take into account the impact of the seven main greenhouse gases that contribute to climate change as defined by the [Kyoto Protocol](https://unfccc.int/kyoto_protocol). The greenhouse gases are:
 
 - carbon dioxide (CO<sub>2</sub>)
 - methane (CH<sub>4</sub>)
@@ -33,7 +33,7 @@ The total kilograms of carbon dioxide equivalent for each transportation mode is
 
 Home energy carbon usage is similarly based on existing records of gas and electricity meter readings sent to my energy provider. Gas consumption in kWh for each period is based on historical records from my energy supplier and their conversion of cubic feet of gas to kWh working out as approximately 32 kWh per ft<sub>3</sub> of gas. Electricity consumption uses a one-to-one conversion between meter readings and kWh.
 
-As above, the total kWh for each energy mode for each month is then multiplied by the [most up-to-date conversion factors](https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2022) issued by the UK Government's Department for Business, Energy & Industrial Strategy in June 2022 (revised September 2022).
+As above, the total kWh for each energy mode for each month is then multiplied by the [conversion factors for that year](https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting) issued by the UK Government (most recently by the Department for Energy Security and Net Zero in June 2023).
 
 The total kilograms of carbon dioxide equivalent for each energy mode is then divided by 1000 to get the total weight in metric tonnes and data is manually transferred to the Json format in energy.json. The application reads that data, sums the data for each year, parses it using Python into the format required by Chart.js, and passes it to JavaScript to use [Chart.js](https://www.chartjs.org/) to render charts.
 

@@ -499,18 +499,18 @@
         },
         {
           "month": "October",
-          "bus": "0.0009939309",
-          "national rail": "0.0648148039",
-          "light rail and tram": "0.0002117993",
-          "taxi": "0.0012449113",
-          "hybrid car": "0.0008319552"
+          "bus": "0.0010521288",
+          "national rail": "0.0647654281",
+          "light rail and tram": "0.0002117495",
+          "taxi": "0.0012436972",
+          "hybrid car": "0.0008247577"
         },
         {
           "month": "November",
-          "bus": "0.0012890041",
-          "national rail": "0.0060885249",
-          "London Underground": "0.0008056054",
-          "domestic flight": "0.1364574497"
+          "bus": "0.0013644795",
+          "national rail": "0.0336325932",
+          "London Underground": "0.0009753994",
+          "domestic flight": "0.1512796720"
         }
       ]
     }
