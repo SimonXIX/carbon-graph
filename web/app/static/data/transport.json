@@ -514,9 +514,21 @@
         },
         {
           "month": "December",
-          "national rail": "0.0509882212",
+          "national rail": "0.0582706222",
+          "light rail and tram": "0.0001703202",
           "London Underground": "0.0004921740",
           "bus": "0.0001512584"
+        }
+      ]
+    },
+    {
+      "year": "2024",
+      "months": [
+        {
+          "month": "January",
+          "petrol car": "0.1359273914",
+          "national rail": "0.0010843701",
+          "light rail and tram": "0.0001979397"
         }
       ]
     }
