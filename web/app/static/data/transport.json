@@ -532,7 +532,8 @@
         },
         {
           "month": "February",
-          "national rail": "0.0473241919"
+          "national rail": "0.0487167513",
+          "hybrid car": "0.0005264411"
         }
       ]
     }
