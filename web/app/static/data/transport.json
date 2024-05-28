@@ -552,8 +552,12 @@
         },
         {
           "month": "May",
-          "national rail": "0.0429695901",
-          "hybrid car": "0.0803700017"
+          "national rail": "0.0583609889",
+          "light rail and tram": "0.0002402674",
+          "hybrid car": "0.0803700017",
+          "taxi": "0.0019851321",
+          "coach": "0.0017329448",
+          "short-haul flight": "0.6721805108"
         }
       ]
     }
