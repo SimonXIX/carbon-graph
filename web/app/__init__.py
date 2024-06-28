@@ -137,7 +137,7 @@ def energy():
         energy_data = json.load(json_data)
         energy_processed = data.process_dataset(energy_data, month_limit)
 
-        return render_template('energy.html', month_limit=month_limit, transport=transport_processed)
+        return render_template('energy.html', month_limit=month_limit, energy=energy_processed)
     
     elif data_source == 'sheets':
         energy_data = sheets.get_data(spreadsheet_id, spreadsheet_range)
