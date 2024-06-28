@@ -2,7 +2,7 @@
 # @creation_date: 2022-10-19
 # @license: The MIT License <https://opensource.org/licenses/MIT>
 # @author: Simon Bowie <simon.bowie.19@gmail.com>
-# @purpose: Processes data
+# @purpose: Processes data from Json files in ./web/app/static/data
 # @acknowledgements:
 
 import random
@@ -49,9 +49,11 @@ def process_dataset(data, month_limit):
                         mode_data.append('0')
         #show only the last x months of data (configured in environment file)
         mode_data = mode_data[-(int(month_limit)):]
-        random_colour = "#" + "%06x" % random.randint(0, 0xFFFFFF)
-        month_dataset = {"label": mode, "data": mode_data, "backgroundColor": random_colour}
-        month_datasets.append(month_dataset)
+        month_datasets.append({
+            "label": mode, 
+            "data": mode_data, 
+            "backgroundColor": "#" + "%06x" % random.randint(0, 0xFFFFFF)
+        })
 
     # for each mode, sum all the data for each year and add to year_datasets
     year_datasets = []
@@ -120,8 +122,10 @@ def add_annual_server_carbon(dataset, kg):
     server_data = [tonnes] * number_of_years
     server_data[0] = '0'
 
-    random_colour = "#" + "%06x" % random.randint(0, 0xFFFFFF)
-    server_dataset = {"label": "cloud server hosting this site", "data": server_data, "backgroundColor": random_colour}
-    dataset.append(server_dataset)
+    dataset.append({
+            "label": "cloud server hosting this site", 
+            "data": server_data,
+            "backgroundColor": "#" + "%06x" % random.randint(0, 0xFFFFFF)
+        })
 
     return dataset
