@@ -9,7 +9,7 @@ services:
       - ${PWD}/google_credentials.json:/code/app/google_credentials.json
     env_file:
       - ./.env.prod
-    command: gunicorn --bind 0.0.0.0:5000 manage:app --timeout 120
+    command: gunicorn --workers=2 --max-requests 50000 --bind 0.0.0.0:5000 manage:app --timeout 120
 
   nginx:
     image: nginx:latest

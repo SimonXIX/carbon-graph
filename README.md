@@ -4,7 +4,13 @@
 
 This is a small Python and JavaScript web application to visualise how much carbon I use on personal transportation and home energy. This graph is based on artist [Ellie Harrison](https://www.ellieharrison.com/)'s Carbon Graph in her book *[The Glasgow Effect: A Tale of Class, Capitalism & Carbon Footprint](https://www.ellieharrison.com/commodities/glasgoweffect/)*, second edition (Edinburgh: Luath Press Ltd., 2021).
 
-Caveat: The concept of a "personal carbon footprint" is itself propaganda for fossil fuel companies in order to shift responsibility for reducing worldwide carbon emissions on to the individual rather than the small number of corporations actually responsible for the majority of the world's fossil fuel usage. The idea was popularised by a 2004 marketing campaign of BP designed by PR firm Ogilvy & Mather ([Kaufman, 2020](https://mashable.com/feature/carbon-footprint-pr-campaign-sham)). BP made no attempt to reduce their carbon footprint. 
+Caveat: The concept of a "personal carbon footprint" is itself propaganda for fossil fuel companies in order to shift responsibility for reducing worldwide carbon emissions on to the individual rather than the small number of corporations actually responsible for the majority of the world's fossil fuel usage. The idea was popularised by a 2004 marketing campaign of BP designed by PR firm Ogilvy & Mather ([Kaufman, 2020](https://mashable.com/feature/carbon-footprint-pr-campaign-sham)). BP made no attempt to reduce their carbon footprint.
+
+### data source
+
+The application has two possible sources for its carbon data and this can be set in the .env file. The first is 'manual' where data can be entered manually into ./web/app/static/data/energy.json and ./web/app/static/data/transport.json. The second is 'sheets' where data can be entered in a Google Sheets spreadsheet which the application reads in real-time.
+
+In both cases, a spreadsheet is required to log carbon data and to perform the calculations necessary to determine how many metric tonnes of carbon are used in a given month. An example of this spreadsheet is provided at [https://docs.google.com/spreadsheets/d/1mXDu0n35GbiX0aDElwb-EsXQFUklLpTbXZ8VfNKHwu0/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1mXDu0n35GbiX0aDElwb-EsXQFUklLpTbXZ8VfNKHwu0/edit?usp=sharing).
 
 ### transportation
 
@@ -27,7 +33,7 @@ The total monthly distance in kilometres for each transportation mode is then mu
 - sulfur hexafluoride (SF<sub>6</sub>)
 - nitrogen trifluoride (NF<sub>3</sub>)
 
-The total kilograms of carbon dioxide equivalent for each transportation mode is then divided by 1000 to get the total weight in metric tonnes and data is manually transferred to the Json format in transport.json. The application reads that data, sums the data for each year, parses it using Python into the format required by Chart.js, and passes it to JavaScript to use [Chart.js](https://www.chartjs.org/) to render charts.
+The total kilograms of carbon dioxide equivalent for each transportation mode is then divided by 1000 to get the total weight in metric tonnes and data. The application reads that data, sums the data for each year, parses it using Python into the format required by Chart.js, and passes it to JavaScript to use [Chart.js](https://www.chartjs.org/) to render charts.
 
 ### energy
 
@@ -35,7 +41,7 @@ Home energy carbon usage is similarly based on existing records of gas and elect
 
 As above, the total kWh for each energy mode for each month is then multiplied by the [conversion factors for that year](https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting) issued by the UK Government (most recently by the Department for Energy Security and Net Zero in June 2023).
 
-The total kilograms of carbon dioxide equivalent for each energy mode is then divided by 1000 to get the total weight in metric tonnes and data is manually transferred to the Json format in energy.json. The application reads that data, sums the data for each year, parses it using Python into the format required by Chart.js, and passes it to JavaScript to use [Chart.js](https://www.chartjs.org/) to render charts.
+The total kilograms of carbon dioxide equivalent for each energy mode is then divided by 1000 to get the total weight in metric tonnes and data. The application reads that data, sums the data for each year, parses it using Python into the format required by Chart.js, and passes it to JavaScript to use [Chart.js](https://www.chartjs.org/) to render charts.
 
 ### server
 
