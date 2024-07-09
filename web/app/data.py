@@ -6,6 +6,7 @@
 # @acknowledgements:
 
 import random
+import gc
 
 def process_dataset(data, month_limit):
     # get all the month labels
@@ -129,3 +130,7 @@ def add_annual_server_carbon(dataset, kg):
         })
 
     return dataset
+
+def release_memory(data):
+    del data
+    gc.collect()

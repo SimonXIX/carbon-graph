@@ -42,12 +42,14 @@ def index():
         transport_data = []
         transport_data.append(json.load(json_data))
         transport_data.append('personal transportation')
+        data.release_memory(json_data)
 
         # open home energy data
         json_data = open('./app/static/data/energy.json')
         energy_data = []
         energy_data.append(json.load(json_data))
         energy_data.append('home energy')
+        data.release_memory(json_data)
 
         merged_data = data.merge_datasets(transport_data, energy_data)
 
@@ -55,6 +57,9 @@ def index():
 
         merged_processed = list(merged_processed)
         merged_processed[3] = data.add_annual_server_carbon(merged_processed[3], server_carbon)
+
+        data.release_memory(transport_data)
+        data.release_memory(energy_data)
 
         return render_template('index.html', month_limit=month_limit, total=merged_processed)
 
@@ -64,12 +69,14 @@ def index():
         raw_data = sheets.get_data(spreadsheet_id, transport_range)
         transport_data.append(sheets.format_transport_data(raw_data))
         transport_data.append('personal transportation')
+        data.release_memory(raw_data)
 
         # get and format home energy data
         energy_data = []
         raw_data = sheets.get_data(spreadsheet_id, energy_range)
         energy_data.append(sheets.format_energy_data(raw_data))
         energy_data.append('home energy')
+        data.release_memory(raw_data)
 
         merged_data = data.merge_datasets(transport_data, energy_data)
 
@@ -77,6 +84,9 @@ def index():
 
         merged_processed = list(merged_processed)
         merged_processed[3] = data.add_annual_server_carbon(merged_processed[3], server_carbon)
+
+        data.release_memory(transport_data)
+        data.release_memory(energy_data)
 
         return render_template('index.html', month_limit=month_limit, total=merged_processed)
 
@@ -108,12 +118,14 @@ def transportation():
         json_data = open('./app/static/data/transport.json')
         transport_data = json.load(json_data)
         transport_processed = data.process_dataset(transport_data, month_limit)
+        data.release_memory(transport_data)
 
         return render_template('transportation.html', month_limit=month_limit, transport=transport_processed)
     
     elif data_source == 'sheets':
         transport_data = sheets.get_data(spreadsheet_id, spreadsheet_range)
         transport_processed = sheets.process_transport_data(transport_data, month_limit)
+        data.release_memory(transport_data)
 
         return render_template('transportation.html', month_limit=month_limit, transport=transport_processed)
 
@@ -136,12 +148,14 @@ def energy():
         json_data = open('./app/static/data/energy.json')
         energy_data = json.load(json_data)
         energy_processed = data.process_dataset(energy_data, month_limit)
+        data.release_memory(transport_data)
 
         return render_template('energy.html', month_limit=month_limit, energy=energy_processed)
     
     elif data_source == 'sheets':
         energy_data = sheets.get_data(spreadsheet_id, spreadsheet_range)
         energy_processed = sheets.process_energy_data(energy_data, month_limit)
+        data.release_memory(energy_data)
 
         return render_template('energy.html', month_limit=month_limit, energy=energy_processed)
 
