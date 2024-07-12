@@ -60,6 +60,7 @@ def index():
 
         data.release_memory(transport_data)
         data.release_memory(energy_data)
+        data.release_memory(merged_data)
 
         return render_template('index.html', month_limit=month_limit, total=merged_processed)
 
@@ -87,6 +88,7 @@ def index():
 
         data.release_memory(transport_data)
         data.release_memory(energy_data)
+        data.release_memory(merged_data)
 
         return render_template('index.html', month_limit=month_limit, total=merged_processed)
 
@@ -116,9 +118,9 @@ def transportation():
         # process personal transportation data
         # open JSON data
         json_data = open('./app/static/data/transport.json')
-        transport_data = json.load(json_data)
-        transport_processed = data.process_dataset(transport_data, month_limit)
-        data.release_memory(transport_data)
+        json_data = json.load(json_data)
+        transport_processed = data.process_dataset(json_data, month_limit)
+        data.release_memory(json_data)
 
         return render_template('transportation.html', month_limit=month_limit, transport=transport_processed)
     
@@ -146,9 +148,9 @@ def energy():
         # process home energy data
         # open JSON data
         json_data = open('./app/static/data/energy.json')
-        energy_data = json.load(json_data)
-        energy_processed = data.process_dataset(energy_data, month_limit)
-        data.release_memory(transport_data)
+        json_data = json.load(json_data)
+        energy_processed = data.process_dataset(json_data, month_limit)
+        data.release_memory(json_data)
 
         return render_template('energy.html', month_limit=month_limit, energy=energy_processed)
     
