@@ -279,3 +279,21 @@ def format_energy_data(data):
         output["years"].append(year_data)
 
     return output
+
+# format server table data
+def format_server_data(data):
+
+    server_data = []
+
+    for row in data[1:]:
+        kg = float(row[1])
+        tonnes = kg / 1000
+        server_data.append(tonnes)
+        
+    output = {
+        "label": "cloud server hosting this site", 
+        "data": server_data,
+        "backgroundColor": "#" + "%06x" % random.randint(0, 0xFFFFFF)
+    }
+
+    return output

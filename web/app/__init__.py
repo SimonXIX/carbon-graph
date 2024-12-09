@@ -29,6 +29,7 @@ def index():
     spreadsheet_id = os.environ.get('SPREADSHEET_ID')
     transport_range = os.environ.get('TRANSPORT_PIVOT_TABLE_RANGE')
     energy_range = os.environ.get('ENERGY_PIVOT_TABLE_RANGE')
+    server_range = os.environ.get('SERVER_TABLE_RANGE')
     # get data_source from config file
     data_source = os.environ.get('DATA_SOURCE')
     # get month_limit from config file
@@ -84,10 +85,18 @@ def index():
         merged_processed = data.process_dataset(merged_data, month_limit)
 
         merged_processed = list(merged_processed)
-        merged_processed[3] = data.add_annual_server_carbon(merged_processed[3], server_carbon)
+
+        # get and format server data (only on the yearly chart)
+        raw_data = sheets.get_data(spreadsheet_id, server_range)
+        server_data=(sheets.format_server_data(raw_data))
+        data.release_memory(raw_data)
+        
+        # append annual server data
+        merged_processed[3].append(server_data)
 
         data.release_memory(transport_data)
         data.release_memory(energy_data)
+        data.release_memory(server_data)
         data.release_memory(merged_data)
 
         return render_template('index.html', month_limit=month_limit, total=merged_processed)

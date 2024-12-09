@@ -45,4 +45,4 @@ The total kilograms of carbon dioxide equivalent for each energy mode is then di
 
 ### server
 
-I've also included an estimated figure for the annual energy consumption of my personal Virtual Private Server used to host this site (and other sites and services that I use). This figure is set in the .env file and is based on the calculation for a cloud server using non-green electricity in a [GoClimate blog post from 11 October 2022](https://www.goclimate.com/blog/the-carbon-footprint-of-servers/).
+I've also included an estimated figure for the annual energy consumption of my personal Virtual Private Server used to host this site (and other sites and services that I use). This figure is set either in the .env file with 'manual' data source or in the Google Sheets spreadsheet with 'sheets' data source and is based on the calculation for a cloud server using either non-green electricity or green electricity in a [GoClimate blog post from 11 October 2022](https://www.goclimate.com/blog/the-carbon-footprint-of-servers/).
