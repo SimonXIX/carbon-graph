@@ -23,7 +23,7 @@ Based on my existing records and calendar entries, I've entered every journey I'
 
 The spreadsheet converts each journey to kilometres (if not already entered in kilometres) and totals the monthly distance for each mode of transportation.
 
-The total monthly distance in kilometres for each transportation mode is then multiplied by the [conversion factors for that year](https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting) issued by the UK Government (most recently by the Department for Energy Security and Net Zero in June 2023). The kg CO<sub>2</sub>e (kilograms of carbon dioxide equivalent) conversion factors take into account the impact of the seven main greenhouse gases that contribute to climate change as defined by the [Kyoto Protocol](https://unfccc.int/kyoto_protocol). The greenhouse gases are:
+The total monthly distance in kilometres for each transportation mode is then multiplied by the [conversion factors for that year](https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting) issued by the UK Government (most recently by the Department for Energy Security and Net Zero and Department for Business, Energy & Industrial Strategy on 30 October 2024). The kg CO<sub>2</sub>e (kilograms of carbon dioxide equivalent) conversion factors take into account the impact of the seven main greenhouse gases that contribute to climate change as defined by the [Kyoto Protocol](https://unfccc.int/kyoto_protocol). The greenhouse gases are:
 
 - carbon dioxide (CO<sub>2</sub>)
 - methane (CH<sub>4</sub>)
