@@ -22,3 +22,13 @@ main > .container {
 .footer {
   display: block;
 }
+
+.england {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.number-alert {
+  font-size: 5rem;
+  color: red;
+}

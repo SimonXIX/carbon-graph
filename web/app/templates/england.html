@@ -1,0 +1,25 @@
+<!--
+# @name: england.html
+# @creation_date: 2026-02-02
+# @license: The MIT License <https://opensource.org/licenses/MIT>
+# @author: Simon Bowie <simon.bowie.19@gmail.com>
+# @purpose: Basic layout for homepage
+# @acknowledgements:
+# https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3
+# Bootstrap 5.1.3: https://getbootstrap.com/
+-->
+
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container england">
+    <div class="row">
+      <div>
+        It has been <span class="number-alert">{{ england_processed[0] }}</span> days since I last visited England on {{ england_processed[1] }}.
+      </div>
+      <div>
+        The record for time not spent in England is <span class="number-alert">{{ england_processed[2] }}</span> days from {{ england_processed[3][0] }} to {{ england_processed[3][1] }}.
+      </div>
+    </div>
+  </div>
+{% endblock %}
