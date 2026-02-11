@@ -15,6 +15,7 @@ import re
 import random
 from . import data
 from . import sheets
+from . import england_functions
 
 # initiate Moment for datetime functions
 moment = Moment()
@@ -145,7 +146,7 @@ def transportation():
 
 @app.route('/energy')
 def energy():
-    # get the ID and range of the transport pivot table from config file
+    # get the ID and range of the energy pivot table from config file
     spreadsheet_id = os.environ.get('SPREADSHEET_ID')
     spreadsheet_range = os.environ.get('ENERGY_PIVOT_TABLE_RANGE')
     # get data_source from config file
@@ -172,3 +173,16 @@ def energy():
 
     else: 
         raise ValueError("Invalid data source")
+
+@app.route('/england')
+def england():
+    # get the ID and range of the transport pivot table from config file
+    spreadsheet_id = os.environ.get('SPREADSHEET_ID')
+    spreadsheet_range = os.environ.get('JOURNEYS_PIVOT_TABLE_RANGE')
+
+    england_data = sheets.get_data(spreadsheet_id, spreadsheet_range)
+    england_processed = england_functions.process_england_data(england_data)
+    #energy_processed = sheets.process_energy_data(energy_data, month_limit)
+    data.release_memory(england_data)
+
+    return render_template('england.html', england_processed=england_processed)
