@@ -22,7 +22,8 @@ england_keywords = [
     "warrington",
     "failsworth",
     "london",
-    "newcastle"
+    "newcastle",
+    "crewe"
 ]
 
 # SUBROUTINES
